@@ -53,7 +53,6 @@ const addContact = (newContact) => {
       return contact.name.concat(contact.number).toLowerCase().includes(normalizedFilter)
      });
   };
-
   
     return (
       <Layout>
@@ -66,8 +65,7 @@ const addContact = (newContact) => {
         </Container>
       </Layout>
     
-    );
-  
+    );  
  };
 
 

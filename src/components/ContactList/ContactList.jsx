@@ -2,21 +2,34 @@ import React from 'react';
 import { ContactListItems } from './ContactListItems';
 import PropTypes from 'prop-types';
 import { List } from './ContactList.styled';
-
 export const ContactList = ({ contacts, onDeleteContact }) => {
   return (
     <List>
-      {contacts.map(item => (
+      {contacts.map(contact => (
         <ContactListItems
-          key={item.id}          
-          name={contacts.name}
-          number={contacts.number}
-          onDeleteContact={() => onDeleteContact(item.id)}
+          key={contact.id}
+          name={contact.name}
+          number={contact.number}
+          onDeleteContact={() => onDeleteContact(contact.id)}
         />
       ))}
     </List>
   );
 };
+// export const ContactList = ({ contacts, onDeleteContact }) => {
+//   return (
+//     <List>
+//       {contacts.map(item => (
+//         <ContactListItems
+//           key={item.id}          
+//           name={name}
+//           number={number}
+//           onDeleteContact={() => onDeleteContact(item.id)}
+//         />
+//       ))}
+//     </List>
+//   );
+// };
 
 ContactList.propTypes = {
   contacts: PropTypes.arrayOf(
